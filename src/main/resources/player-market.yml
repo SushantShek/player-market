@@ -1,0 +1,166 @@
+openapi: 3.0.2
+info:
+  title: Player-Market
+  description: "TBD : description about the application which is about Players and Football teams"
+  termsOfService: http://swagger.io/terms/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.0.1-SNAPSHOT
+servers:
+  - url: https://reflectoring.swagger.io/v2
+tags:
+  - name: players
+    description: Operations for player
+  - name: teams
+    description: Operations for teams
+paths:
+  /player:
+    post:
+      tags:
+        - players
+      summary: Create players
+      description: Create players functionality
+      operationId: createPlayers
+      requestBody:
+        description: Created players object
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/Player'
+        required: true
+      responses:
+        default:
+          description: successful operation
+          content: {}
+      x-codegen-request-body-name: body
+  /{playername}:
+    get:
+      tags:
+        - players
+      summary: Get player by player name
+      operationId: getPlayerByName
+      parameters:
+        - name: playername
+          in: path
+          description: 'The name that needs to be fetched. Use user1 for testing. '
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
+        404:
+          description: User not found
+          content: {}
+  /all:
+    get:
+      tags:
+        - players
+      summary: Get All players
+      operationId: getAllPlayers
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Player'
+    put:
+      tags:
+        - players
+      summary: Updated player
+      description: This can only be done by the logged in user.
+      operationId: updatePlayer
+      parameters:
+        - name: playername
+          in: path
+          description: name that need to be updated
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Updated user object
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/Player'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
+        400:
+          description: Invalid player supplied
+          content: {}
+        404:
+          description: Player not found
+          content: {}
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - players
+      summary: Delete player
+      description: This can only be done by the logged in player.
+      operationId: deleteUser
+      parameters:
+        - name: playername
+          in: path
+          description: The name that needs to be deleted
+          required: true
+          schema:
+            type: string
+      responses:
+        201:
+          description: operation successful
+          content: {}
+        400:
+          description: Invalid playername supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+components:
+  schemas:
+    Player:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        playername:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        teams:
+          type: string
+        userStatus:
+          type: integer
+          description: User Status
+          format: int32
+    Team:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        teamname:
+          type: string
+        localtion:
+          type: string
+        fee:
+          type: number
+          format: float64

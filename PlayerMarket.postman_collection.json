@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "ba063012-a365-4e48-a199-5e021d68c39b",
+		"name": "PlayerMarket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/player/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"age\": 27,\n    \"email\":\"abcd@134.com\",\n    \"experience\": 36,\n    \"firstname\": \"JON\",\n    \"lastname\": \"N\",\n    \"playerstatus\":0,\n    \"playername\": \"JN\",\n    \"team\":\"NA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/player/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/team/build",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"players\":[\n        \"DD\",\"EE\",\"FF\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/team/build",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"team",
+						"build"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/player/name/EE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/name/EE",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"name",
+						"EE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/player/name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/name/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"name",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/team/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"teamname\": \"Devil\",\n    \"location\": \"Spain\",\n    \"fee\": 100,\n    \"currency\": \"EUR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/team/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"team",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/player/contract/DD",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/contract/CC",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"contract",
+						"CC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/player/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/player/3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/player/BB",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/player/BB",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						"BB"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/team/name/Angel",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\nAction\tID\tAGE\tEMAIL\tEXPERIENCE\tFIRSTNAME\tLASTNAME\tPLAYERNAME\tPLAYERSTATUS\tTEAM\nEditDelete\t1\t27\tabcd@134.com\t36\tJON\tN\tJN\t0\tNA\nEditDelete\t2\t31\tabcd@134.com\t36\tBob\tB\tBB\t0\tAngel\nEditDelete\t3\t31\tabcd@134.com\t36\tAdam\tA\tAA\t0\tDevil\nEditDelete\t4\t31\tabcd@134.com\t39\tClem\tC\tCC\t0\tDevil\nEditDelete\t5\t31\tabcd@134.com\t39\tDom\tD\tDD\t0\tAngel\nEditDelete\t6\t21\tabcd@134.com\t29\tEvan\tE\tEE\t0\tAngel\nEditDelete\t7\t27\tabcd@134.com\t32\tFlu\tF\tFF\t0\tDevil\nEditDelete\t8\t29\tabcd@134.com\t35\tGio\tG\tGG\t0\tDevil\nEditDelete\t9\t39\tabcd@134.com\t45\tHugo\tH\tHH\t0\tDevil\nAdd\t\t\t\t\t\t\t\t\t\n(9 rows, 2 ms)\n"
+				},
+				"url": {
+					"raw": "localhost:8080/team/name/Angel",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"team",
+						"name",
+						"Angel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/team/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\nAction\tID\tAGE\tEMAIL\tEXPERIENCE\tFIRSTNAME\tLASTNAME\tPLAYERNAME\tPLAYERSTATUS\tTEAM\nEditDelete\t1\t27\tabcd@134.com\t36\tJON\tN\tJN\t0\tNA\nEditDelete\t2\t31\tabcd@134.com\t36\tBob\tB\tBB\t0\tAngel\nEditDelete\t3\t31\tabcd@134.com\t36\tAdam\tA\tAA\t0\tDevil\nEditDelete\t4\t31\tabcd@134.com\t39\tClem\tC\tCC\t0\tDevil\nEditDelete\t5\t31\tabcd@134.com\t39\tDom\tD\tDD\t0\tAngel\nEditDelete\t6\t21\tabcd@134.com\t29\tEvan\tE\tEE\t0\tAngel\nEditDelete\t7\t27\tabcd@134.com\t32\tFlu\tF\tFF\t0\tDevil\nEditDelete\t8\t29\tabcd@134.com\t35\tGio\tG\tGG\t0\tDevil\nEditDelete\t9\t39\tabcd@134.com\t45\tHugo\tH\tHH\t0\tDevil\nAdd\t\t\t\t\t\t\t\t\t\n(9 rows, 2 ms)\n"
+				},
+				"url": {
+					"raw": "localhost:8080/team/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"team",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/team/Devil",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\nAction\tID\tAGE\tEMAIL\tEXPERIENCE\tFIRSTNAME\tLASTNAME\tPLAYERNAME\tPLAYERSTATUS\tTEAM\nEditDelete\t1\t27\tabcd@134.com\t36\tJON\tN\tJN\t0\tNA\nEditDelete\t2\t31\tabcd@134.com\t36\tBob\tB\tBB\t0\tAngel\nEditDelete\t3\t31\tabcd@134.com\t36\tAdam\tA\tAA\t0\tDevil\nEditDelete\t4\t31\tabcd@134.com\t39\tClem\tC\tCC\t0\tDevil\nEditDelete\t5\t31\tabcd@134.com\t39\tDom\tD\tDD\t0\tAngel\nEditDelete\t6\t21\tabcd@134.com\t29\tEvan\tE\tEE\t0\tAngel\nEditDelete\t7\t27\tabcd@134.com\t32\tFlu\tF\tFF\t0\tDevil\nEditDelete\t8\t29\tabcd@134.com\t35\tGio\tG\tGG\t0\tDevil\nEditDelete\t9\t39\tabcd@134.com\t45\tHugo\tH\tHH\t0\tDevil\nAdd\t\t\t\t\t\t\t\t\t\n(9 rows, 2 ms)\n"
+				},
+				"url": {
+					"raw": "localhost:8080/team/Devil",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"team",
+						"Devil"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
